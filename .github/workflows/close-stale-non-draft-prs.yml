@@ -1,27 +1,21 @@
-name: Close stale non-draft PRs
+name: Close stale PRs
 
 on:
   schedule:
-    - cron: '0 * * * *'
-  workflow_dispatch:
+    - cron: '*/5 * * * *' # runs every 5 minutes
 
 jobs:
-  close-stale-prs:
+  stale:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
-
-      - name: List open PRs
-        uses: octokit/action-list-pull-requests@v2
+      - uses: actions/stale@v4
         with:
-          state: open
-
-      - name: Close stale non-draft PRs
-        uses: tibdex/github-action-close-pull-request@v2
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          days-since-last-update: 1
-          close-comment: "This pull request has been open for more than 1 minute without any activity and is not a draft. It is being closed automatically. Please feel free to reopen it if you are still working on it."
-          exclude-draft: true
-          labels: "WIP"
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          stale-pr-message: 'This PR is stale because it has been open for 5 minutes with no activity. Closing.'
+          close-pr-message: 'Closing this stale PR. Feel free to reopen if you are still working on it.'
+          stale-pr-label: 'stale'
+          days-before-stale: 0 # immediately mark PRs as stale
+          days-before-close: 0 # immediately close stale PRs
+          operations-per-run: 500 # maximum number of operations per run
+          remove-stale-when-updated: true # remove stale label when PR is updated
+          any-of-labels: 'WIP' # only consider PRs with this label
