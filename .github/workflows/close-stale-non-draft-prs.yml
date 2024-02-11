@@ -15,7 +15,7 @@ jobs:
           close-pr-message: 'Closing this stale PR. Feel free to reopen if you are still working on it.'
           stale-pr-label: 'stale'
           days-before-stale: 0 # immediately mark PRs as stale
-          days-before-close: 0 # immediately close stale PRs
-          operations-per-run: 500 # maximum number of operations per run
+          days-before-close: 1 # immediately close stale PRs
           remove-stale-when-updated: true # remove stale label when PR is updated
+          exempt-draft-pr: true,
           exempt-pr-labels: 'draft'
