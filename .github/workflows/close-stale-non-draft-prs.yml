@@ -17,5 +17,5 @@ jobs:
           days-before-stale: 0 # immediately mark PRs as stale
           days-before-close: 1 # immediately close stale PRs
           remove-stale-when-updated: true # remove stale label when PR is updated
-          exempt-draft-pr: true,
+          exempt-draft-pr: true
           exempt-pr-labels: 'draft'
