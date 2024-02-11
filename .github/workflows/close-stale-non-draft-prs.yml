@@ -1,21 +1,21 @@
-name: Close stale PRs
+# name: Close stale PRs
 
-on:
-  schedule:
-    - cron: '*/5 * * * *' # runs every 5 minutes
+# on:
+#   schedule:
+#     - cron: '0 0 * * *'
 
-jobs:
-  stale:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/stale@v4
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          stale-pr-message: 'This PR is stale because it has been open for 5 minutes with no activity. Closing.'
-          close-pr-message: 'Closing this stale PR. Feel free to reopen if you are still working on it.'
-          stale-pr-label: 'stale'
-          days-before-stale: 0 # immediately mark PRs as stale
-          days-before-close: 0 # immediately close stale PRs
-          remove-stale-when-updated: true # remove stale label when PR is updated
-          exempt-draft-pr: true
-          exempt-pr-labels: 'draft'
+# jobs:
+#   stale:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/stale@v4
+#         with:
+#           repo-token: ${{ secrets.GITHUB_TOKEN }}
+#           stale-pr-message: 'Automatically Job'. This PR is stale because it has been open for 30 days with no activity. Closing.'
+#           close-pr-message: 'Automatically Job'. Closing this stale PR. Feel free to reopen if you are still working on it.'
+#           stale-pr-label: 'stale'
+#           days-before-stale: 30
+#           days-before-close: 60
+#           remove-stale-when-updated: true
+#           exempt-draft-pr: true
+#           exempt-pr-labels: 'draft'
