@@ -24,5 +24,4 @@ jobs:
           days-since-last-update: 1
           close-comment: "This pull request has been open for more than 1 minute without any activity and is not a draft. It is being closed automatically. Please feel free to reopen it if you are still working on it."
           exclude-draft: true
-          labels:
-            - "WIP"
+          labels: "WIP"
