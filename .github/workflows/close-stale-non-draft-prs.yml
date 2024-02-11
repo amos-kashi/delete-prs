@@ -1,0 +1,25 @@
+name: Close stale non-draft PRs
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  close-stale-prs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: List open PRs
+        uses: octokit/action-list-pull-requests@v2
+        with:
+          state: open
+
+      - name: Close stale non-draft PRs
+        uses: tibdex/github-action-close-pull-request@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          days-since-last-update: 5
+          close-comment: "This pull request has been open for more than 5 minutes without any activity and is not a draft. It is being closed automatically. Please feel free to reopen it if you are still working on it."
+          exclude-draft: true
