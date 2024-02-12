@@ -11,8 +11,8 @@ jobs:
       - uses: actions/stale@v4
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          stale-pr-message: 'Automatically Job'. This PR is stale because it has been open for 30 days with no activity. Closing.'
-          close-pr-message: 'Automatically Job'. Closing this stale PR. Feel free to reopen if you are still working on it.'
+          stale-pr-message: 'Auto note: This PR has been open for over 30 days without any activity, and will be closed.'
+          close-pr-message: 'Auto note: Closing this stale PR, feel free to reopen if you are still working on it.'
           stale-pr-label: 'stale'
           days-before-stale: 30
           days-before-close: 60
