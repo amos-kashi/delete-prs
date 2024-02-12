@@ -1,8 +1,0 @@
-{
-  "name": "delete-prs",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "git@github.com:amos-kashi/delete-prs.git",
-  "author": "amos kashi <amosk@yad2.co.il>",
-  "license": "MIT"
-}
