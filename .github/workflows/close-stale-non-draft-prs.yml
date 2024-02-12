@@ -1,0 +1,21 @@
+# name: Close stale PRs
+
+# on:
+#   schedule:
+#     - cron: '0 0 * * *'
+
+# jobs:
+#   stale:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/stale@v4
+#         with:
+#           repo-token: ${{ secrets.GITHUB_TOKEN }}
+#           stale-pr-message: 'Automatically Job'. This PR is stale because it has been open for 30 days with no activity. Closing.'
+#           close-pr-message: 'Automatically Job'. Closing this stale PR. Feel free to reopen if you are still working on it.'
+#           stale-pr-label: 'stale'
+#           days-before-stale: 30
+#           days-before-close: 60
+#           remove-stale-when-updated: true
+#           exempt-draft-pr: true
+#           exempt-pr-labels: 'draft'
