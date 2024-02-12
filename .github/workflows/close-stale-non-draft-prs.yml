@@ -14,8 +14,8 @@ jobs:
           stale-pr-message: 'Auto note: This PR has been open for over 30 days without any activity, and will be closed.'
           close-pr-message: 'Auto note: Closing this stale PR, feel free to reopen if you are still working on it.'
           stale-pr-label: 'stale'
-          days-before-stale: 30
-          days-before-close: 60
+          days-before-stale: 0
+          days-before-close: 0
           remove-stale-when-updated: true
           exempt-draft-pr: true
           exempt-pr-labels: 'draft'
