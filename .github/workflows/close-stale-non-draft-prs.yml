@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/stale@v4
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: '${{ secrets.GITHUB_TOKEN }}'
           stale-pr-message: 'Automatically Job'. This PR is stale because it has been open for 30 days with no activity. Closing.'
           close-pr-message: 'Automatically Job'. Closing this stale PR. Feel free to reopen if you are still working on it.'
           stale-pr-label: 'stale'
