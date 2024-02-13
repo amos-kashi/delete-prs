@@ -1,0 +1,1 @@
+console.log('delete-prs/test2.js')
