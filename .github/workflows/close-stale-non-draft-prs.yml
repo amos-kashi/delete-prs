@@ -1,21 +1,33 @@
-name: Close stale PRs
+name: Close stale non-draft PRs
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   stale:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/stale@v4
+      - uses: actions/stale@v9
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          stale-pr-message: 'Auto note: This PR has been open for over 30 days without any activity, and will be closed.'
-          close-pr-message: 'Auto note: Closing this stale PR, feel free to reopen if you are still working on it.'
+          stale-pr-message: 'This PR has been inactive for over 30 days. Feel free to reopen if you plan to continue work.'
+          close-pr-message: 'Closing this inactive PR. Please reopen if it still needs attention.'
           stale-pr-label: 'stale'
           days-before-stale: 0
           days-before-close: 0
-          remove-stale-when-updated: true
           exempt-draft-pr: true
           exempt-pr-labels: 'draft'
+          operations-per-run: 500
+          send-notification: true
+          send-notification-template: |
+            This PR has been inactive for a while. Consider continuing work or closing it.
+
+            - Opened by: ${{ issue.user.login }}
+            - Created at: ${{ issue.created_at }}
+            - Last updated at: ${{ issue.updated_at }}
+
+            **Please keep this PR active if you are still working on it.**
+
+            Thanks,
+            The ${{ repository }} maintainers
