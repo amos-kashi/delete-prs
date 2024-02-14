@@ -13,9 +13,11 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           stale-pr-message: 'This PR has been inactive for over 30 days. Feel free to reopen if you plan to continue work.'
           close-pr-message: 'Closing this inactive PR. Please reopen if it still needs attention.'
-          stale-pr-label: 'stale'
-          days-before-stale: 0
-          days-before-close: 1
+          stale-pr-label: 'Stale'
+          days-before-issue-close: 0
+          days-before-pr-close: 0
+          remove-pr-stale-when-updated: true
           exempt-draft-pr: true
+          ignore-updates: true
           exempt-pr-labels: 'draft'
           operations-per-run: 500
