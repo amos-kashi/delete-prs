@@ -15,7 +15,7 @@ jobs:
           close-pr-message: 'Closing this inactive PR. Please reopen if it still needs attention.'
           stale-pr-label: 'stale'
           days-before-stale: 0
-          days-before-close: 0
+          days-before-close: 1
           exempt-draft-pr: true
           exempt-pr-labels: 'draft'
           operations-per-run: 500
