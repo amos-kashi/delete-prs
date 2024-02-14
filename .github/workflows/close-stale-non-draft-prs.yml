@@ -19,15 +19,3 @@ jobs:
           exempt-draft-pr: true
           exempt-pr-labels: 'draft'
           operations-per-run: 500
-          send-notification: true
-          send-notification-template: |
-            This PR has been inactive for a while. Consider continuing work or closing it.
-
-            - Opened by: ${{ issue.user.login }}
-            - Created at: ${{ issue.created_at }}
-            - Last updated at: ${{ issue.updated_at }}
-
-            **Please keep this PR active if you are still working on it.**
-
-            Thanks,
-            The ${{ repository }} maintainers
